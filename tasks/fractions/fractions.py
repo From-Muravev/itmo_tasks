@@ -15,5 +15,14 @@ def add_fractions(a, b, c, d):
     Функция сложения дробей a/b и c/d
     Должна возвращать числитель и знаменатель дроби-результата
     """
-    return Ellipsis # Напишите тело функции и правильный return
 
+    chisl = y = a * d + c * b
+    znam = x = b * d
+
+    while y != 0 and x != 0:
+        if y > x:
+            y = y % x
+        else:
+            x = x % y
+
+    return (chisl // (x + y), znam // (x + y))
